@@ -1,0 +1,219 @@
+nav.fbc {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-size: var(--fbc-font-size, 14px);
+  line-height: 1.4;
+  color: var(--fbc-current, #18181b);
+}
+
+nav.fbc .fbc-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: var(--fbc-gap, 8px);
+}
+
+nav.fbc.is-ready .fbc-list {
+  flex-wrap: nowrap;
+}
+
+nav.fbc.fbc-align-center .fbc-list {
+  justify-content: center;
+}
+
+nav.fbc.fbc-align-right .fbc-list {
+  justify-content: flex-end;
+}
+
+nav.fbc .fbc-list > li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.fbc .fbc-item,
+nav.fbc .fbc-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--fbc-gap, 8px);
+  position: relative;
+  flex: 0 0 auto;
+  max-width: 100%;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+nav.fbc .fbc-ellipsis[hidden],
+nav.fbc .fbc-item[hidden],
+nav.fbc .fbc-menu[hidden] {
+  display: none !important;
+}
+
+nav.fbc .fbc-sep {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  color: var(--fbc-separator, #a1a1aa);
+}
+
+nav.fbc .fbc-sep svg,
+nav.fbc .fbc-sep-icon,
+nav.fbc .fbc-home-icon {
+  display: block;
+  width: var(--fbc-icon-size, 14px);
+  height: var(--fbc-icon-size, 14px);
+  flex: 0 0 auto;
+}
+
+nav.fbc .lucide-dot {
+  transform: scale(2.4);
+}
+
+[dir="rtl"] nav.fbc .lucide-chevron-right,
+[dir="rtl"] nav.fbc .lucide-arrow-right {
+  transform: scaleX(-1);
+}
+
+nav.fbc a.fbc-link {
+  color: var(--fbc-link, #737373);
+  text-decoration: none;
+}
+
+nav.fbc a.fbc-link:hover,
+nav.fbc a.fbc-link:focus-visible {
+  color: var(--fbc-hover, #18181b);
+}
+
+nav.fbc .fbc-current {
+  color: var(--fbc-current, #18181b);
+}
+
+nav.fbc a.fbc-link:focus-visible,
+nav.fbc button.fbc-ellipsis-btn:focus-visible,
+nav.fbc .fbc-menu-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+nav.fbc button.fbc-ellipsis-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 1.75em;
+  min-height: 0;
+  min-width: 1.75em;
+  margin: 0;
+  padding: 0 0.35em;
+  border: 1px solid #e4e4e7;
+  border-radius: 6px;
+  background: #f4f4f5;
+  box-shadow: none;
+  color: #3f3f46;
+  font-family: inherit;
+  font-size: 1em;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+nav.fbc button.fbc-ellipsis-btn:hover,
+nav.fbc button.fbc-ellipsis-btn:focus-visible {
+  background: #fff;
+  border-color: #d4d4d8;
+  color: #18181b;
+}
+
+nav.fbc button.fbc-ellipsis-btn[aria-expanded="true"] {
+  background: #fff;
+  border-color: #e4e4e7;
+}
+
+nav.fbc .fbc-menu {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 10rem;
+  max-width: min(18rem, 70vw);
+  margin: 0;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+nav.fbc .fbc-menu-link {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  color: var(--fbc-link, #18181b);
+  font-size: inherit;
+  font-weight: 400;
+  line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+nav.fbc a.fbc-menu-link:hover,
+nav.fbc a.fbc-menu-link:focus-visible,
+nav.fbc .fbc-menu-link:hover,
+nav.fbc .fbc-menu-link:focus-visible {
+  background: #f4f4f5;
+  color: var(--fbc-hover, #18181b);
+}
+
+nav.fbc.is-tight .fbc-item.is-truncated {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+}
+
+nav.fbc.is-tight .fbc-item.is-truncated .fbc-text,
+nav.fbc.is-tight .fbc-item.is-truncated .fbc-current,
+nav.fbc.is-tight .fbc-item.is-truncated .fbc-link {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+nav.fbc .fbc-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media print {
+  nav.fbc [hidden].fbc-item {
+    display: inline-flex !important;
+  }
+
+  nav.fbc .fbc-ellipsis {
+    display: none !important;
+  }
+}
